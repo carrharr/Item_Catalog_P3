@@ -1,0 +1,16 @@
+body {
+  padding-top: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+button {
+  margin-right: 5px;
+}
+.img-thumbnail {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.img-about {
+  max-height: 200px;
+}

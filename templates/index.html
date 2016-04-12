@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="col-lg-12 col-lg-push-10">
+  <a href="{{ url_for('addDriver') }}" class="btn btn-success">Create a Driver Profile</a>
+</div>
+
+<div class="col-lg-4 col-md-4 col-xs-12">
+  <h3>Browse by Category</h3>
+  <ul class="list-unstyled">
+    {% for category in categories %}
+    <li><a href="{{ url_for('categoryTrips', category=category) }}">{{ category }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="col-lg-4 col-md-4 col-xs-12">
+  <h3>Drivers Active</h3>
+  <ul class="list-unstyled">
+    {% for driver in drivers %}
+    <li><img src="{{ driver.image }}" alt="" class="img-thumbnail" />  <a href="{{ url_for('driver', driver_id=driver.id) }}">{{ driver.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="col-lg-4 col-md-4 col-xs-12">
+  <h3>Latest Trips Listed</h3>
+  <a href="{{ url_for('allTrips') }}" class="btn btn-primary">See All Trips</a><br><br>
+    <ul class="list-unstyled">
+      {% for trip in trips %}
+      <li><img src="{{ trip.image }}" alt="" class="img-thumbnail"/>  <a href="{{ url_for('trip', driver_id=trip.driver_id, trip_id=trip.id) }}">{{ trip.name }}</a></li>
+      {% endfor %}
+    </ul>
+</div>
+{% endblock %}

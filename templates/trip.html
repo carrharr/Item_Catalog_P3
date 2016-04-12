@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h1>{{ trip.name }} from {{ driver.name }}</h1>
+<img src="{{ trip.image }}" alt="">
+<p><strong>Description:</strong> <br> {{ trip.description }}</p>
+<p><strong>Price: </strong>{{ trip.price }} $</p>
+<a href="{{ url_for('driver', driver_id=driver.id) }}" class="btn btn-primary">Back to {{ driver.name }}</a>
+{% endblock %}

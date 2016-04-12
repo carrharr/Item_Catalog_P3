@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h1>Trips Available in {{ category }}</h1>
+<ul>
+{% for trip in trips %}
+<li class="list-unstyled">
+  <img src="{{ trip.image }}" alt="">
+  <h4><a href="{{ url_for('trip', driver_id=trip.driver_id, trip_id=trip.id) }}">{{ trip.name }}</a></h4>
+  <p>{{ trip.description }}</p>
+  <p>{{ trip.price }}</p>
+  <p>Category: {{ trip.category }}</p>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

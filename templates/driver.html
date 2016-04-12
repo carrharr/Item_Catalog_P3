@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="col-lg-6 col-xs-1">
+<h1><img src="{{driver.image}}" alt="" />{{ driver.name }}</h1>
+
+<div>
+  {{driver.email}}
+</div>
+<div>
+  {{driver.phone}}
+</div>
+
+  <p>
+    <a href="{{ url_for('addTrip', driver_id=driver.id)}}" class="btn btn-success">New Trip</a>
+    <a href="{{ url_for('editDriver', driver_id=driver.id)}}" class="btn btn-default">Edit Driver</a>
+    <a href="{{ url_for('deleteDriver', driver_id=driver.id)}}" class="btn btn-danger">Delete Driver</a>
+  </p>
+</div>
+<div class="col-lg-6 col-xs-1">
+  <ul class="list-unstyled">
+    {% for trip in trips %}
+    <li>
+      <a href="{{ url_for('trip', driver_id=driver.id, trip_id=trip.id) }}"><h3>{{trip.name}}</h3></a>
+      <img src="{{ trip.image }}" alt="">
+      <p><strong>Description:</strong> <br> {{ trip.description }}</p>
+      <p><strong>Price: </strong>{{ trip.price }} $</p>
+      <a href="{{ url_for('editTrip', driver_id=driver.id, trip_id=trip.id) }}" class="btn btn-primary">Edit</a>
+      <a href="{{ url_for('deleteTrip', driver_id=driver.id, trip_id=trip.id) }}" class="btn btn-danger">Delete</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

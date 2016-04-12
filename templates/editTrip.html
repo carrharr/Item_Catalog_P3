@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h1>Edit {{ trip.name }} for {{ driver.name}}</h1>
+<form class="" action="#" method="post" role="form">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" class="form-control"><br>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea name="description" class="form-control"></textarea><br>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" name="price" class="form-control"><br>
+  </div>
+
+  <div class="form-group">
+    <label for="category">Category</label>
+    <input type="text" name="category" class="form-control"><br>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Picture Link</label>
+    <input type="text" name="image" class="form-control"><br>
+  </div>
+
+  <button type="submit" name="button" class="btn btn-primary">Submit</button>
+  <a href="{{ url_for('driver', driver_id=driver.id) }}" class="btn btn-default">Cancel</a>
+
+</form>
+{% endblock %}

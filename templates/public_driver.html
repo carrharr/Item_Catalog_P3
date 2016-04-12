@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="col-lg-6 col-xs-1">
+  <h1><img src="{{driver.image}}" alt="" />{{ driver.name }}</h1>
+
+  <div class="">
+    {{driver.email}}
+  </div>
+  <div class="">
+    {{driver.phone}}
+  </div>
+</div>
+
+<div class="col-lg-6 col-xs-1">
+  <ul class="list-unstyled">
+    {% for trip in trips %}
+    <li>
+      <a href="{{ url_for('trip', driver_id=driver.id, trip_id=trip.id) }}"><h3>{{trip.name}}</h3></a>
+      <img src="{{ trip.image }}" alt="">
+      <p><strong>Description:</strong> <br> {{ trip.description }}</p>
+      <p><strong>Price: </strong>{{ trip.price }} $</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

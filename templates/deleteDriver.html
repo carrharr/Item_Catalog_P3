@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h1>Delete Driver {{ driver.name }}?</h1>
+<div class="alert alert-danger">
+  <p>
+		Are you sure? This action will delete <br>
+    all trips related to {{ driver.name }}
+	</p>
+</div>
+<form class="" action="#" method="post" role="form">
+  <button type="submit" name="button" class="btn btn-danger">Delete</button>
+  <a href="{{ url_for('driver', driver_id=driver.id) }}" class="btn btn-default">Cancel</a>
+
+</form>
+{% endblock %}
