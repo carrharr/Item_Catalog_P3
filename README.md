@@ -1,4 +1,4 @@
-# Draivcan (Tenerife car sharing) App
+# Draivcan App
 
 This application is made for Udacity's FSND project 3. Note that this is not a
 functional product ready for deployment. ONLY for learning purposes.
@@ -26,7 +26,7 @@ functional product ready for deployment. ONLY for learning purposes.
 
 * **client_secrets.json** - JSON for filling with your JSON api ID from google.
 
-[Back to Top](#Draivcan-Tenerife-app)
+[Back to Top](#draivcan-app)
 
 ## Required Dependencies and modules
 
@@ -46,7 +46,7 @@ functional product ready for deployment. ONLY for learning purposes.
 
 * Httplib2 Module
 
-[Back to Top](#Draivcan-Tenerife-app)
+[Back to Top](#draivcan-app)
 
 ## How to Run
 
@@ -70,7 +70,7 @@ functional product ready for deployment. ONLY for learning purposes.
 
 * Access at 127.0.0.1:8000 and voila!
 
-[Back to Top](#Draivcan-Tenerife-app)
+[Back to Top](#draivcan-app)
 
 ## JSON API
 
@@ -79,7 +79,7 @@ JSON can be retrieved at the following endpoints:
 * ```127.0.0.1:8000/driver/{driver_id}/json```
 * ```127.0.0.1:8000/driver/{driver_id}/{trip_id}/json```
 
-[Back to Top](#Draivcan-Tenerife-app)
+[Back to Top](#draivcan-app)
 
 ## Questions and requests
 
