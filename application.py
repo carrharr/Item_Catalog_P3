@@ -461,19 +461,19 @@ def editTrip(driver_id=None, trip_id=None):
 
     if request.method == 'POST':
         if request.form['name']:
-            item.name = request.form['name']
+            trip.name = request.form['name']
         if request.form['description']:
-            item.description = request.form['description']
+            trip.description = request.form['description']
         if request.form['origin']:
-            item.origin = request.form['origin']
+            trip.origin = request.form['origin']
         if request.form['destination']:
-            item.destination = request.form['destination']
+            trip.destination = request.form['destination']
         if request.form['departs']:
-            item.departs = request.form['departs']
+            trip.departs = request.form['departs']
         if request.form['price']:
-            item.price = request.form['price']
+            trip.price = request.form['price']
         if request.form['category']:
-            item.category = request.form['category']
+            trip.category = request.form['category']
         dbs.add(trip)
         dbs.commit()
         flash('%s successfully updated!' % trip.name)

@@ -30,6 +30,7 @@ class Drivers(Base):
     phone = Column(String(16))
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
+    trips = relationship("Trips", cascade="all, delete-orphan")
 
     @property
     def serialize(self):
@@ -75,17 +76,7 @@ class Trips(Base):
             'user_id': self.user_id
         }
 
-"""
-class Ctg(enum.Enum):
-    ''' Enum for categories. '''
-    "1" = "North"
-    "2" = "South"
-    "3" = "Metropolitan"
-    "4" = "West"
-    "5" = "University"
-    "6" = "North Airport"
-    "7" = "South Airport"
-"""
+
 
 engine = create_engine('sqlite:///draivcan.db')
 
